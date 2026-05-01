@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alisson Lucas | Portfólio de Dados</title>
+    <link rel="stylesheet" href="style-2.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+</head>
+<body>
+    <!-- Div do Fundo -->
+    <div class="global-bg"></div>
+
+    <nav class="glass-nav animate-fade-up">
+        <a href="#">
+            <img src="assets/VizuDados.png" alt="Vizu Dados" class="logo-img" id="main-logo">
+        </a>
+        <div class="nav-links">
+            <a href="#about">Trajetória</a>
+            <a href="#projects">Portfólio</a>
+            <a href="#mini-projects">Mais Trabalhos</a>
+            <a href="#contact">Contato</a>
+        </div>
+        <div class="nav-actions">
+            <button id="theme-toggle" class="btn-theme" title="Alternar Modo Claro/Escuro">
+                <i data-lucide="sun" id="icon-sun"></i>
+                <i data-lucide="moon" id="icon-moon" style="display: none;"></i>
+            </button>
+            <a href="#contact" class="btn-nav-accent">
+                Falar Comigo
+            </a>
+        </div>
+    </nav>
+
+    <header class="hero-section hero">
+        <div class="bg-aura-wrapper">
+            <div class="aura aura-1"></div>
+            <div class="aura aura-2"></div>
+            <div class="aura aura-3"></div>
+            <div class="bg-noise"></div>
+        </div>
+
+        <div class="container hero-container-flex">
+            <div class="hero-text animate-blur-in delay-100">
+                <h1 class="headline" style="font-size: clamp(2.2rem, 4vw, 3.8rem);">
+                    Seja muito bem-vindo(a) ao <span>meu portfólio.</span>
+                </h1>
+                
+                <p class="subheadline delay-200" style="margin-bottom: 0.5rem; color: var(--text-secondary);">
+                    <strong>5+ Anos de experiência profissional</strong> em Análise de Dados, desenvolvendo soluções que transformam dados em insights estratégicos para tomada de decisões empresariais.
+                </p>
+                <p class="subheadline delay-200" style="color: var(--text-secondary); margin-top: 1rem;">
+                    Sou graduado em Análise e Desenvolvimento de Sistemas e curso especialização em Data Analytics e IA para Negócios. Transformo dados complexos em dashboards estratégicos e automatizados, utilizando <strong>Power BI, Python e Power Automate</strong> para otimizar KPIs e acelerar a tomada de decisão.
+                </p>
+                
+                <div class="cta-group delay-300" style="margin-top: 1rem;">
+                    <a href="#projects" class="btn-beam">
+                        <div class="beam-border"></div>
+                        <div class="btn-content-bg">
+                            <div class="lines-overlay"></div>
+                            <div class="bottom-glow"></div>
+                        </div>
+                        <span style="position: relative; z-index: 10; display: flex; align-items: center;">
+                            Ver Portfólio
+                            <i data-lucide="arrow-up-right" style="margin-left: 0.6rem; width: 1.1rem; height: 1.1rem;"></i>
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-image-container animate-blur-in delay-200">
+                <div class="tools-group-wrapper animate-float">
+                    <div class="hero-image-wrapper">
+                        <div class="hero-image-mask">
+                            <img src="assets/Perfil.jpeg" alt="Alisson Lucas" class="hero-image">
+                        </div>
+                    </div>
+                    
+                    <div class="tool-square tool-pbi" style="top: 15%; left: -22px;">
+                        <img src="logos/powerbi.png" alt="Power BI">
+                    </div>
+                    <div class="tool-square tool-excel" style="top: 15%; right: -22px;">
+                        <img src="logos/excel.png" alt="Excel">
+                    </div>
+                    <div class="tool-square tool-python" style="top: 50%; left: -22px; transform: translateY(-50%);">
+                        <img src="logos/python.png" alt="Python">
+                    </div>
+                    <div class="tool-square tool-vba" style="top: 50%; right: -22px; transform: translateY(-50%);">
+                        <img src="logos/vba.png" alt="VBA">
+                    </div>
+                    <div class="tool-square tool-figma" style="bottom: 15%; left: -22px;">
+                        <img src="logos/figma.png" alt="Figma">
+                    </div>
+                    <div class="tool-square tool-automate" style="bottom: 15%; right: -22px;">
+                        <img src="logos/powerautomate.png" alt="Power Automate">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="experience-section" id="about">
+            <div class="section-bg">
+                <div class="dots-grid"></div>
+            </div>
+
+            <main class="timeline-outer">
+                <h2 class="headline" style="text-align: center; margin-bottom: 8rem; max-width: 1000px; margin-inline: auto;">
+                    Minha <span>trajetória profissional</span>
+                </h2>
+
+                <div class="timeline-body" style="position: relative;">
+                    <div class="timeline-v-line"></div>
+                    <div class="timeline-v-progress" id="timeline-progress-v"></div>
+
+                    <!-- CARD 1: Polybalas -->
+                    <div class="timeline-item-wrapper">
+                        <div class="timeline-v-dot"></div>
+                        <div class="timeline-item-content">
+                            <span class="timeline-v-year">01</span>
+                            <div class="timeline-card-glass">
+                                <div class="company-header">
+                                    <div class="company-logo">
+                                        <img src="logos/polybalas.png" alt="Polybalas">
+                                    </div>
+                                    <div class="company-info">
+                                        <h3 class="company-name">Polybalas Distribuidora</h3>
+                                        <p class="company-period">Abr 2021 — Fev 2025</p>
+                                    </div>
+                                </div>
+                                <p class="job-role"><strong>Analista Comercial</strong></p>
+                                <ul class="job-desc-list">
+                                    <li>Suporte estratégico à Gerência e Diretoria para embasamento de tomadas de decisão.</li>
+                                    <li>Atendimento e gestão de informações voltadas para grandes marcas como L'Oréal, Reckitt (Veja, Vanish, SBP), Condor, Nivea, Baruel e Baly.</li>
+                                    <li>Desenvolvimento de múltiplos relatórios gerenciais e automações via Excel e VBA, garantindo escalabilidade e precisão dos dados comerciais.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 2: São Braz -->
+                    <div class="timeline-item-wrapper">
+                        <div class="timeline-v-dot"></div>
+                        <div class="timeline-item-content">
+                            <span class="timeline-v-year">02</span>
+                            <div class="timeline-card-glass">
+                                <div class="company-header">
+                                    <div class="company-logo">
+                                        <img src="logos/sao-braz.svg" alt="São Braz">
+                                    </div>
+                                    <div class="company-info">
+                                        <h3 class="company-name">São Braz ( Indústria )</h3>
+                                        <p class="company-period">Fev 2025 — Abr 2026</p>
+                                    </div>
+                                </div>
+                                <p class="job-role"><strong>Analista de Vendas e Dados</strong></p>
+                                <ul class="job-desc-list">
+                                    <li>Desenvolvimento de projetos analíticos em Power BI conectados diretamente aos bancos de dados da companhia.</li>
+                                    <li>Criação de soluções em Excel para acompanhamento de orçado vs. realizado, campanhas de vendas e performance diária por filial.</li>
+                                    <li>Implementação de robôs em VBA para envios automáticos de relatórios via WhatsApp.</li>
+                                    <li>Estruturação de projetos via API (Excel e Power BI) que resultaram em uma economia de 2 a 3 horas diárias de trabalho manual para a equipe operacional.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 3: Vizu Dados -->
+                    <div class="timeline-item-wrapper">
+                        <div class="timeline-v-dot"></div>
+                        <div class="timeline-item-content">
+                            <span class="timeline-v-year">03</span>
+                            <div class="timeline-card-glass">
+                                <div class="company-header">
+                                    <div class="company-logo">
+                                        <img src="assets/VizuDados.png" alt="Vizu Dados Consultoria">
+                                    </div>
+                                    <div class="company-info">
+                                        <h3 class="company-name">Vizu Dados Consultoria</h3>
+                                        <p class="company-period">Abr 2026 — Presente</p>
+                                    </div>
+                                </div>
+                                <p class="job-role"><strong>Freelancer / Consultor de Dados</strong></p>
+                                <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5; margin-top: 0.5rem;">
+                                    Atuo de forma autônoma desenvolvendo soluções sob medida (Dashboards, automações e infraestrutura de dados) em Power BI, Excel e Google Sheets para empresas de pequeno a grande porte. O trabalho envolve desde projetos avulsos focados em resolução de gargalos até consultorias prolongadas para cultura orientada a dados.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </section>
+
+        <!-- SESSÃO DE DASHBOARDS AMPLIADA -->
+        <section class="projects-section" id="projects">
+            <div class="proj-bg"></div>
+            <div class="projects-container">
+                <h2 class="headline" style="text-align: center; margin-bottom: 6rem; margin-inline: auto;">
+                    Conheça alguns dos <span>meus trabalhos</span>
+                </h2>
+
+                <div class="projects-grid large-cards-grid">
+                    
+                    <!-- PROJETO 1 -->
+                    <div class="project-card large-card featured" style="--accent-rgb: 71, 194, 192;">
+                        <div class="project-info styled-content">
+                            <div class="project-meta">
+                                <span class="company"><img src="logos/powerbi.png" alt="PBI"> Power BI</span>
+                                <span class="year">Comercial</span>
+                            </div>
+                            <h3 class="project-title">Performance Comercial</h3>
+                            <p class="cenario-text"><strong>Cenário:</strong> Empresa com controle de vendas em planilhas manuais e dificuldade em acompanhar resultados.</p>
+                            
+                            <div class="mapping-container">
+                                <!-- CABEÇALHOS ANTES / DEPOIS -->
+                                <div class="mapping-headers">
+                                    <h5 class="antes-title">Antes</h5>
+                                    <div class="header-arrow-space"></div>
+                                    <h5 class="res-title">Depois</h5>
+                                </div>
+                                
+                                <div class="mapping-row">
+                                    <div class="mapping-antes">Relatórios feitos manualmente</div>
+                                    <div class="mapping-arrow"><i data-lucide="arrow-right"></i></div>
+                                    <div class="mapping-resultado">
+                                        <div class="res-card">Dashboard atualizado automaticamente</div>
+                                    </div>
+                                </div>
+                                <div class="mapping-row">
+                                    <div class="mapping-antes">Demora de até 1 hora para consolidar dados e envio aos envolvidos</div>
+                                    <div class="mapping-arrow"><i data-lucide="arrow-right"></i></div>
+                                    <div class="mapping-resultado">
+                                        <div class="res-card">Redução de até 70–90% no tempo gasto com relatórios de vendas</div>
+                                    </div>
+                                </div>
+                                <div class="mapping-row">
+                                    <div class="mapping-antes">Falta de visão clara de metas e desempenho</div>
+                                    <div class="mapping-arrow"><i data-lucide="arrow-right"></i></div>
+                                    <div class="mapping-resultado">
+                                        <div class="res-card">Visualização de vendas, metas e performance em tempo real</div>
+                                        <div class="res-card">Potencial economia de até 4,5h semanais operacionais</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-img-wrapper">
+                            <img src="Performance_Comercial.png" alt="Dashboard Performance Comercial">
+                        </div>
+                    </div>
+
+                    <!-- PROJETO 2 -->
+                    <div class="project-card large-card featured" style="--accent-rgb: 157, 0, 255;">
+                        <div class="project-info styled-content">
+                            <div class="project-meta">
+                                <span class="company"><img src="logos/powerbi.png" alt="PBI"> Power BI</span>
+                                <span class="year">Qualidade</span>
+                            </div>
+                            <h3 class="project-title">Satisfação (NPS)</h3>
+                            <p class="cenario-text"><strong>Cenário:</strong> Empresa sem controle estruturado da satisfação dos clientes e dificuldade em identificar pontos de melhoria.</p>
+
+                            <div class="mapping-container">
+                                <!-- CABEÇALHOS ANTES / DEPOIS -->
+                                <div class="mapping-headers">
+                                    <h5 class="antes-title">Antes</h5>
+                                    <div class="header-arrow-space"></div>
+                                    <h5 class="res-title">Depois</h5>
+                                </div>
+
+                                <div class="mapping-row">
+                                    <div class="mapping-antes">Dados de satisfação dispersos</div>
+                                    <div class="mapping-arrow"><i data-lucide="arrow-right"></i></div>
+                                    <div class="mapping-resultado">
+                                        <div class="res-card">Dashboard com acompanhamento contínuo do NPS</div>
+                                    </div>
+                                </div>
+                                <div class="mapping-row">
+                                    <div class="mapping-antes">Falta de acompanhamento da evolução do NPS</div>
+                                    <div class="mapping-arrow"><i data-lucide="arrow-right"></i></div>
+                                    <div class="mapping-resultado">
+                                        <div class="res-card">Análise por período, região e responsável</div>
+                                    </div>
+                                </div>
+                                <div class="mapping-row">
+                                    <div class="mapping-antes">Dificuldade em identificar insatisfeitos, detratores e promotores</div>
+                                    <div class="mapping-arrow"><i data-lucide="arrow-right"></i></div>
+                                    <div class="mapping-resultado">
+                                        <div class="res-card">Identificação clara de promotores, neutros e detratores</div>
+                                        <div class="res-card">Apoio na melhoria da experiência do cliente</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-img-wrapper">
+                            <img src="Nps.png" alt="Dashboard NPS">
+                        </div>
+                    </div>
+
+                    <!-- PROJETO 3 -->
+                    <div class="project-card large-card featured" style="--accent-rgb: 255, 107, 0;">
+                        <div class="project-info styled-content">
+                            <div class="project-meta">
+                                <span class="company"><img src="logos/powerbi.png" alt="PBI"> Power BI</span>
+                                <span class="year">Geográfico</span>
+                            </div>
+                            <h3 class="project-title">Análise Regional YoY</h3>
+                            <p class="cenario-text"><strong>Cenário:</strong> Empresa com dificuldade em entender o crescimento real das vendas e identificar sazonalidades.</p>
+
+                            <div class="mapping-container">
+                                <!-- CABEÇALHOS ANTES / DEPOIS -->
+                                <div class="mapping-headers">
+                                    <h5 class="antes-title">Antes</h5>
+                                    <div class="header-arrow-space"></div>
+                                    <h5 class="res-title">Depois</h5>
+                                </div>
+
+                                <div class="mapping-row">
+                                    <div class="mapping-antes">Comparações manuais entre períodos</div>
+                                    <div class="mapping-arrow"><i data-lucide="arrow-right"></i></div>
+                                    <div class="mapping-resultado">
+                                        <div class="res-card">Dashboard com análise automática de crescimento (YoY)</div>
+                                    </div>
+                                </div>
+                                <div class="mapping-row">
+                                    <div class="mapping-antes">Falta de visão clara do crescimento anual</div>
+                                    <div class="mapping-arrow"><i data-lucide="arrow-right"></i></div>
+                                    <div class="mapping-resultado">
+                                        <div class="res-card">Visualização da evolução mensal das vendas</div>
+                                    </div>
+                                </div>
+                                <div class="mapping-row">
+                                    <div class="mapping-antes">Dificuldade em identificar regiões mais lucrativas</div>
+                                    <div class="mapping-arrow"><i data-lucide="arrow-right"></i></div>
+                                    <div class="mapping-resultado">
+                                        <div class="res-card">Identificação de regiões e cidades mais rentáveis</div>
+                                        <div class="res-card">Apoio na definição de estratégias comerciais</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-img-wrapper">
+                            <img src="Mapa.png" alt="Mapa de Vendas Regional">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SESSÃO CARROSSEL MINI PROJETOS -->
+        <section class="mini-projects-carousel" id="mini-projects">
+            <div class="container">
+                <h2 class="headline" style="text-align: center; margin-bottom: 4rem; margin-inline: auto;">
+                    Mais dos <span>meus trabalhos</span>
+                </h2>
+            </div>
+            
+            <div class="marquee-mini-container project-marquee">
+                <div class="marquee-content-mini">
+                    
+                    <!-- ==========================================
+                         CONJUNTO 1 DOS CARDS (8 CARDS ÚNICOS) 
+                         ========================================== -->
+
+                    <!-- 1. Gestão de Frotas -->
+                    <div class="mini-project-card">
+                        <div class="mini-img-wrapper">
+                            <img src="Excel_Gestao_Frotas.png" alt="Gestão de Frotas">
+                        </div>
+                        <div class="mini-info">
+                            <h4 class="mini-title">Dashboard Gestão de Frotas</h4>
+                            <div class="mini-tools">
+                                <img src="logos/excel.png" alt="Excel"> <span class="color-excel">Excel Dashboard</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Desempenho Anual -->
+                    <div class="mini-project-card">
+                        <div class="mini-img-wrapper">
+                            <img src="Excel_Desempenho_Anual.png" alt="Desempenho Anual">
+                        </div>
+                        <div class="mini-info">
+                            <h4 class="mini-title">Desempenho Anual</h4>
+                            <div class="mini-tools">
+                                <img src="logos/excel.png" alt="Excel"> <span class="color-excel">Excel Dashboard</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Folha de Pagamento -->
+                    <div class="mini-project-card">
+                        <div class="mini-img-wrapper">
+                            <img src="Excel_Folha_Pagamento.png" alt="Folha de Pagamento">
+                        </div>
+                        <div class="mini-info">
+                            <h4 class="mini-title">Controle de Folha de Pagamento</h4>
+                            <div class="mini-tools">
+                                <img src="logos/excel.png" alt="Excel"> <span class="color-excel">Excel Dashboard</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Ranking de Vendas -->
+                    <div class="mini-project-card">
+                        <div class="mini-img-wrapper">
+                            <img src="PowerBi_Ranking.png" alt="Ranking de Vendas">
+                        </div>
+                        <div class="mini-info">
+                            <h4 class="mini-title">Ranking de Vendas</h4>
+                            <div class="mini-tools">
+                                <img src="logos/powerbi.png" alt="PBI"> <span class="color-pbi">Power BI</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. DRE Financeiro -->
+                    <div class="mini-project-card">
+                        <div class="mini-img-wrapper">
+                            <img src="Excel_DRE.png" alt="DRE Financeiro">
+                        </div>
+                        <div class="mini-info">
+                            <h4 class="mini-title">Análise DRE Financeiro</h4>
+                            <div class="mini-tools">
+                                <img src="logos/excel.png" alt="Excel"> <span class="color-excel">Excel Avançado</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6. Requisições -->
+                    <div class="mini-project-card">
+                        <div class="mini-img-wrapper">
+                            <img src="PowerBi_Requisicoes.png" alt="Mini Requisições">
+                        </div>
+                        <div class="mini-info">
+                            <h4 class="mini-title">Acompanhamento de Requisições</h4>
+                            <div class="mini-tools">
+                                <img src="logos/powerbi.png" alt="PBI"> <span class="color-pbi">Power BI</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 7. Formulário de Caixa -->
+                    <div class="mini-project-card">
+                        <div class="mini-img-wrapper">
+                            <img src="Excel_Formulário_Caixa.png" alt="Mini Caixa">
+                        </div>
+                        <div class="mini-info">
+                            <h4 class="mini-title">Formulário de Caixa/Cadastro</h4>
+                            <div class="mini-tools">
+                                <img src="logos/excel.png" alt="Excel"> <span class="color-excel">Excel / VBA</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 8. Resultado Líquido -->
+                    <div class="mini-project-card">
+                        <div class="mini-img-wrapper">
+                            <img src="Excel_Resultado_Líquido.png" alt="Mini Resultado">
+                        </div>
+                        <div class="mini-info">
+                            <h4 class="mini-title">Análise de Resultado Líquido</h4>
+                            <div class="mini-tools">
+                                <img src="logos/excel.png" alt="Excel"> <span class="color-excel">Excel Avançado</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ==========================================
+                         CONJUNTO 2: CÓPIA EXATA DO CONJUNTO 1
+                         (Obrigatório para o loop infinito sem cortes) 
+                         ========================================== -->
+                    
+                    <!-- 1. Gestão de Frotas -->
+                    <div class="mini-project-card">
+                        <div class="mini-img-wrapper">
+                            <img src="Excel_Gestao_Frotas.png" alt="Gestão de Frotas">
+                        </div>
+                        <div class="mini-info">
+                            <h4 class="mini-title">Dashboard Gestão de Frotas</h4>
+                            <div class="mini-tools">
+                                <img src="logos/excel.png" alt="Excel"> <span class="color-excel">Excel Dashboard</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Desempenho Anual -->
+                    <div class="mini-project-card">
+                        <div class="mini-img-wrapper">
+                            <img src="Excel_Desempenho_Anual.png" alt="Desempenho Anual">
+                        </div>
+                        <div class="mini-info">
+                            <h4 class="mini-title">Desempenho Anual</h4>
+                            <div class="mini-tools">
+                                <img src="logos/excel.png" alt="Excel"> <span class="color-excel">Excel Dashboard</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Folha de Pagamento -->
+                    <div class="mini-project-card">
+                        <div class="mini-img-wrapper">
+                            <img src="Excel_Folha_Pagamento.png" alt="Folha de Pagamento">
+                        </div>
+                        <div class="mini-info">
+                            <h4 class="mini-title">Controle de Folha de Pagamento</h4>
+                            <div class="mini-tools">
+                                <img src="logos/excel.png" alt="Excel"> <span class="color-excel">Excel Dashboard</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Ranking de Vendas -->
+                    <div class="mini-project-card">
+                        <div class="mini-img-wrapper">
+                            <img src="PowerBi_Ranking.png" alt="Ranking de Vendas">
+                        </div>
+                        <div class="mini-info">
+                            <h4 class="mini-title">Ranking de Vendas</h4>
+                            <div class="mini-tools">
+                                <img src="logos/powerbi.png" alt="PBI"> <span class="color-pbi">Power BI</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. DRE Financeiro -->
+                    <div class="mini-project-card">
+                        <div class="mini-img-wrapper">
+                            <img src="Excel_DRE.png" alt="DRE Financeiro">
+                        </div>
+                        <div class="mini-info">
+                            <h4 class="mini-title">Análise DRE Financeiro</h4>
+                            <div class="mini-tools">
+                                <img src="logos/excel.png" alt="Excel"> <span class="color-excel">Excel Avançado</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6. Requisições -->
+                    <div class="mini-project-card">
+                        <div class="mini-img-wrapper">
+                            <img src="PowerBi_Requisicoes.png" alt="Mini Requisições">
+                        </div>
+                        <div class="mini-info">
+                            <h4 class="mini-title">Acompanhamento de Requisições</h4>
+                            <div class="mini-tools">
+                                <img src="logos/powerbi.png" alt="PBI"> <span class="color-pbi">Power BI</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 7. Formulário de Caixa -->
+                    <div class="mini-project-card">
+                        <div class="mini-img-wrapper">
+                            <img src="Excel_Formulário_Caixa.png" alt="Mini Caixa">
+                        </div>
+                        <div class="mini-info">
+                            <h4 class="mini-title">Formulário de Caixa/Cadastro</h4>
+                            <div class="mini-tools">
+                                <img src="logos/excel.png" alt="Excel"> <span class="color-excel">Excel / VBA</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 8. Resultado Líquido -->
+                    <div class="mini-project-card">
+                        <div class="mini-img-wrapper">
+                            <img src="Excel_Resultado_Líquido.png" alt="Mini Resultado">
+                        </div>
+                        <div class="mini-info">
+                            <h4 class="mini-title">Análise de Resultado Líquido</h4>
+                            <div class="mini-tools">
+                                <img src="logos/excel.png" alt="Excel"> <span class="color-excel">Excel Avançado</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SESSÃO DE CONTATOS LIMPA E FOCADA -->
+        <section class="cta-section reveal" id="contact">
+            <div class="cta-aura"></div>
+            <div class="cta-container" style="display: flex; justify-content: center;">
+                <div class="cta-card" style="max-width: 800px; width: 100%; text-align: center;">
+                    <h2 class="headline" style="margin-bottom: 1.5rem;">
+                        Gostou do meu trabalho? Vamos <span>conversar.</span>
+                    </h2>
+                    <p class="cta-subtitle" style="font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 3rem;">
+                        Estou sempre aberto a novas oportunidades, parcerias e conexões na área de dados. Fique à vontade para me mandar uma mensagem.
+                    </p>
+                    
+                    <div class="cta-contacts" style="display: flex; flex-direction: column; gap: 1rem; align-items: center; width: 100%;">
+                        <a href="https://wa.me/5583981303722" target="_blank" class="contact-item" style="width: 100%; max-width: 400px; justify-content: center;">
+                            <img src="logos/whatsapp.png" alt="WhatsApp">
+                            <span>+55 (83) 98130-3722</span>
+                        </a>
+                        <a href="mailto:alisson@vizudados.com.br" class="contact-item" style="width: 100%; max-width: 400px; justify-content: center;">
+                            <img src="logos/email.png" alt="E-mail">
+                            <span>alisson@vizudados.com.br</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/alisson-lucas-372805221" target="_blank" class="contact-item" style="width: 100%; max-width: 400px; justify-content: center;">
+                            <img src="logos/linkedin.png" alt="LinkedIn">
+                            <span>/alisson-lucas</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        lucide.createIcons();
+
+        // Lógica do Tema Claro / Escuro com troca de Logo
+        const themeToggle = document.getElementById('theme-toggle');
+        const iconSun = document.getElementById('icon-sun');
+        const iconMoon = document.getElementById('icon-moon');
+        const body = document.body;
+        const mainLogo = document.getElementById('main-logo');
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-theme');
+            if (body.classList.contains('light-theme')) {
+                iconSun.style.display = 'none';
+                iconMoon.style.display = 'block';
+                mainLogo.src = 'assets/VizuDados-Claro.png';
+            } else {
+                iconSun.style.display = 'block';
+                iconMoon.style.display = 'none';
+                mainLogo.src = 'assets/VizuDados.png';
+            }
+        });
+
+        // Revelar Elementos ao Rolar
+        const revealOptions = { threshold: 0.15, rootMargin: '0px 0px -50px 0px' };
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.classList.contains('projects-grid')) {
+                        const cards = entry.target.querySelectorAll('.project-card');
+                        cards.forEach((card, index) => {
+                            setTimeout(() => card.classList.add('active'), index * 150);
+                        });
+                        revealObserver.unobserve(entry.target);
+                    } else {
+                        entry.target.classList.add('active');
+                        revealObserver.unobserve(entry.target);
+                    }
+                }
+            });
+        }, revealOptions);
+
+        document.querySelectorAll('.timeline-item-wrapper, .projects-grid, .cta-section').forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        // Progresso da Timeline
+        const progressLine = document.getElementById('timeline-progress-v');
+        const timelineBody = document.querySelector('.timeline-body');
+
+        const updateTimelineProgress = () => {
+            if (!progressLine || !timelineBody) return;
+            const rect = timelineBody.getBoundingClientRect();
+            const viewHeight = window.innerHeight;
+            const startScroll = rect.top - (viewHeight / 2);
+            const totalHeight = rect.height;
+            let progress = 0;
+            if (startScroll < 0) {
+                progress = Math.min(Math.max((Math.abs(startScroll) / totalHeight) * 100, 0), 100);
+                progressLine.style.height = `${progress}%`;
+            }
+        };
+
+        // Efeito 3D nos Cards de Projetos
+        const handleOnMouseMove = e => {
+            const { currentTarget: target } = e;
+            const rect = target.getBoundingClientRect(),
+            x = e.clientX - rect.left,
+            y = e.clientY - rect.top;
+
+            target.style.setProperty("--mouse-x", `${x}px`);
+            target.style.setProperty("--mouse-y", `${y}px`);
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateX = ((y - centerY) / centerY) * -1;
+            const rotateY = ((x - centerX) / centerX) * 1;
+
+            target.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        };
+
+        const handleMouseLeave = e => {
+            const { currentTarget: target } = e;
+            target.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg)`;
+        };
+
+        for(const card of document.querySelectorAll(".project-card")) {
+            card.addEventListener('mousemove', handleOnMouseMove);
+            card.addEventListener('mouseleave', handleMouseLeave);
+        }
+
+        window.addEventListener('scroll', updateTimelineProgress);
+        window.addEventListener('resize', updateTimelineProgress);
+        updateTimelineProgress(); 
+    </script>
+</body>
+</html>
