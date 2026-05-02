@@ -115,7 +115,8 @@ body.light-theme .btn-beam .btn-content-bg { background: #374151 !important; bor
     display: inline-flex; align-items: center; justify-content: center; 
     height: 38px; padding: 0 1.2rem; background: var(--primary); color: #fff; 
     text-decoration: none; border-radius: 9999px; font-weight: 700; font-size: 0.75rem; 
-    text-transform: uppercase; border: none; box-shadow: 0 4px 12px var(--primary-glow); 
+    text-transform: uppercase; border: none; box-shadow: 0 4px 12px var(--primary-glow);
+    white-space: nowrap; /* Impede a quebra de linha */
 }
 
 /* Hero */
@@ -352,7 +353,28 @@ body.light-theme .contact-item:hover { background: #4a5568; }
     /* ── MINI CAROUSEL ── */
     .mini-projects-carousel { padding: 4rem 0; }
 
+ /* Ajuste extra para o botão do menu não espremer os outros ícones */
+    .btn-nav-accent { 
+        padding: 0 0.8rem; 
+        font-size: 0.65rem; 
+        height: 34px; 
+    }
+
     /* ── CONTATO ── */
-    .cta-card { padding: 4rem 1.5rem; border-radius: 2rem; }
-    .contact-item { font-size: 1rem; padding: 1rem 1.5rem; }
+    .cta-card { padding: 4rem 1.2rem; border-radius: 2rem; }
+    
+    /* Ajustes para forçar os contatos a ficarem em uma única linha */
+    .contact-item { 
+        font-size: 0.85rem !important; /* Fonte menor para caber textos longos */
+        padding: 0.9rem 1rem !important; /* Menos "gordura" nas laterais */
+        gap: 0.8rem !important; /* Ícone mais perto do texto */
+        white-space: nowrap !important; /* Proíbe a quebra de linha */
+        justify-content: center !important; 
+    }
+    
+    /* Reduzindo um pouquinho o ícone para harmonizar com o texto menor */
+    .contact-item img {
+        width: 24px !important;
+        height: 24px !important;
+    }
 }
