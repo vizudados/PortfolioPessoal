@@ -153,6 +153,7 @@ body.light-theme .tool-square { background: #374151; border-color: rgba(255, 255
 @keyframes beam-spin { to { transform: rotate(360deg); } }
 @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 @keyframes slideArrow { 0% { transform: translateX(-4px); } 100% { transform: translateX(4px); } }
+@keyframes slideArrowDown { 0% { transform: rotate(90deg) translateX(-4px); } 100% { transform: rotate(90deg) translateX(4px); } }
 
 .animate-fade-up { animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
 .animate-blur-in { animation: blurIn 1s cubic-bezier(0.16, 1, 0.3, 1) both; }
@@ -202,8 +203,8 @@ body.light-theme .company-logo { background: #1e293b; border-color: rgba(0,0,0, 
 .large-cards-grid { display: flex; flex-direction: column; gap: 4rem; margin-top: 2rem; }
 
 .project-card.large-card { width: 100%; max-width: 1600px; min-height: 520px; background: var(--bg-glass); backdrop-filter: blur(20px); border: 1px solid var(--border-color); border-radius: 2.5rem; overflow: hidden; display: flex; flex-direction: row; align-items: stretch; transition: box-shadow 0.5s ease, border-color 0.5s ease; cursor: pointer; position: relative; }
-.project-card.large-card:hover { border-color: var(--primary); box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15); }
-body:not(.light-theme) .project-card.large-card:hover { box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5); }
+.project-card.large-card:hover { border-color: rgba(var(--accent-rgb), 0.5); box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(var(--accent-rgb), 0.15); }
+body:not(.light-theme) .project-card.large-card:hover { box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(var(--accent-rgb), 0.08); }
 
 .project-info.styled-content { flex: 0 0 640px; width: 640px; max-width: 640px; position: relative; z-index: 10; padding: 3.5rem 3rem; display: flex; flex-direction: column; justify-content: center; background: var(--bg-surface); border-right: 1px solid var(--border-color); }
 body.light-theme .project-info.styled-content { background: #e2e8f0; border-color: rgba(0, 0, 0, 0.1); }
@@ -213,13 +214,23 @@ body.light-theme .project-info.styled-content .antes-title { color: var(--primar
 body.light-theme .project-info.styled-content .res-title { color: #059669; }
 body.light-theme .project-info.styled-content .res-card { color: #10b981; border-color: rgba(16, 185, 129, 0.3); background: rgba(16, 185, 129, 0.1); }
 
-.project-img-wrapper { flex: 1; position: relative; z-index: 1; overflow: hidden; background: var(--bg-page); }
+.project-img-wrapper { flex: 1; position: relative; z-index: 1; overflow: hidden; background: var(--bg-page); cursor: zoom-in; }
 .project-img-wrapper img { width: 100%; height: 100%; object-fit: cover; object-position: left top; transition: transform 0.6s ease; }
 .project-card.large-card:hover .project-img-wrapper img { transform: scale(1.02); }
+.project-img-badge { position: absolute; bottom: 1.5rem; right: 1.5rem; z-index: 10; background: rgba(0,0,0,0.6); backdrop-filter: blur(8px); color: #fff; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.5rem 1.2rem; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.2); opacity: 0; transform: translateY(8px); transition: all 0.3s ease; display: flex; align-items: center; gap: 0.4rem; }
+.project-card.large-card:hover .project-img-badge { opacity: 1; transform: translateY(0); }
+
+/* LIGHTBOX */
+.lightbox-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.96); z-index: 9999; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; padding: 1rem; }
+.lightbox-overlay.active { opacity: 1; pointer-events: all; }
+.lightbox-overlay img { max-width: 95vw; max-height: 90vh; object-fit: contain; border-radius: 0.75rem; box-shadow: 0 0 80px rgba(71,194,192,0.2); }
+.lightbox-close { position: absolute; top: 1.2rem; right: 1.2rem; width: 44px; height: 44px; background: rgba(255,255,255,0.1); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.15); border-radius: 50%; color: white; cursor: pointer; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+.lightbox-close:hover { background: rgba(255,255,255,0.2); }
 
 .project-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.8rem; font-size: 0.85rem; color: var(--text-secondary); font-weight: 700; text-transform: uppercase;}
-.project-meta .company { display: flex; align-items: center; gap: 0.5rem; color: var(--primary); background: var(--primary-glow); padding: 0.3rem 0.8rem; border-radius: 99px; }
+.project-meta .company { display: flex; align-items: center; gap: 0.5rem; color: var(--primary); background: var(--primary-glow); padding: 0.3rem 0.8rem; border-radius: 99px; border: 1px solid rgba(71,194,192,0.2); }
 .project-meta .company img { height: 16px; width: 16px; object-fit: contain; }
+.project-meta .year { background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); padding: 0.3rem 0.8rem; border-radius: 99px; font-size: 0.75rem; }
 
 .project-title { font-family: var(--font-display); font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem; line-height: 1.1; color: var(--text-main); }
 .cenario-text { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 2rem; line-height: 1.5; }
@@ -273,12 +284,11 @@ body.light-theme .contact-item:hover { background: #4a5568; }
    ========================================================= */
 @media (max-width: 1200px) {
     .container { padding: 0 2rem; }
-    .hero-container-flex { grid-template-columns: 1fr; text-align: center; gap: 4rem; }
+    .hero-container-flex { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
     .hero-text { align-items: center; order: 1; padding-right: 0;}
+    .hero-image-container { order: 0; }
     
     .project-card.large-card { flex-direction: column; min-height: auto; width: 100%; }
-    
-    /* Correção do gap no mobile (border-radius 0 no contato interno) */
     .project-info.styled-content { flex: none; width: 100%; max-width: 100%; padding: 3rem 2.5rem; border-radius: 0; border-right: none; border-bottom: 1px solid var(--border-color);}
     .project-img-wrapper { flex: none; width: 100%; height: 350px; border-radius: 0; }
 }
@@ -296,30 +306,53 @@ body.light-theme .contact-item:hover { background: #4a5568; }
         transform: translateY(-20px); opacity: 0; pointer-events: none; transition: all 0.3s ease; 
     }
     .nav-links.active { transform: translateY(0); opacity: 1; pointer-events: auto; }
-     body.light-theme .nav-links { background: rgba(201, 212, 223, 0.98); border-color: rgba(0, 0, 0, 0.1)}
+    body.light-theme .nav-links { background: rgba(201, 212, 223, 0.98); border-color: rgba(0, 0, 0, 0.1); }
+
+    /* ── HERO: elimina o gap excessivo entre nav e foto de perfil ── */
+    .hero { padding-top: 5rem; padding-bottom: 3rem; min-height: auto; }
+    .hero-container-flex { gap: 1.5rem; }
+    .hero-image-container { padding: 0 1rem; }
+    .hero-text { gap: 1.2rem; }
+    .headline { font-size: clamp(2rem, 7vw, 3rem); }
+    .subheadline { font-size: 1rem; }
+
     .btn-beam { height: 48px; padding: 0 1.5rem; font-size: 0.75rem; }
     .tool-square { width: 45px; height: 45px; }
     
+    /* ── TIMELINE ── */
     .timeline-outer { padding: 0 1.5rem; }
     .timeline-v-line, .timeline-v-progress { left: 1.5rem; transform: none; }
     .timeline-v-dot { left: 1.5rem; transform: translate(-50%, -50%); }
     .timeline-item-wrapper { justify-content: flex-end !important; }
     .timeline-item-content { width: 100%; justify-content: flex-start !important; padding-left: 3.5rem !important; padding-right: 0 !important; }
     
-    /* Ajuste Mapeamento Antes/Depois Mobile */
+    /* ── DASHBOARD CARDS: melhor visualização no mobile ── */
+    .projects-section { padding: 2rem 1rem 6rem; }
+    .project-img-wrapper { height: 240px; }
+    .project-title { font-size: 1.8rem; }
+    .project-info.styled-content { padding: 2rem 1.5rem; }
+    .res-card { font-size: 0.8rem; padding: 0.6rem 0.8rem; }
+    .cenario-text { font-size: 0.9rem; margin-bottom: 1.2rem; }
+
+    /* ── SETAS: fix do conflito transform + animation ── */
     .mapping-row { flex-direction: column; align-items: flex-start; gap: 0.8rem; padding: 1.5rem 0 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); }
     .mapping-headers { display: none; } 
     .mapping-antes { width: 100%; padding-left: 1.2rem; }
     .mapping-antes::after { content: "Antes"; position: absolute; top: -1.5rem; left: 0; font-size: 0.75rem; color: var(--primary); text-transform: uppercase; font-weight: bold;}
     
-    /* Seta para baixo forçada com !important e texto "Depois" */
-    .mapping-arrow { width: 100%; justify-content: center; margin: 1.5rem 0; position: relative; }
-    .mapping-arrow svg { transform: rotate(90deg) !important; }
+    /* FIX: margem generosa para o label "Depois" não colidir + keyframe composto para manter animação */
+    .mapping-arrow { width: 100%; justify-content: center; margin: 2rem 0 0.5rem; position: relative; }
+    .mapping-arrow svg { animation: slideArrowDown 1s ease-in-out infinite alternate !important; transform: rotate(90deg); }
     .mapping-arrow::before {
-        content: "Depois"; position: absolute; top: -1.5rem; font-size: 0.75rem; color: #10b981;
+        content: "Depois"; position: absolute; top: -1.6rem; font-size: 0.75rem; color: #10b981;
         text-transform: uppercase; font-weight: bold; letter-spacing: 0.1em;
     }
     .mapping-resultado { width: 100%; }
-    
-    .cta-card { padding: 4rem 2rem; border-radius: 2rem; }
+
+    /* ── MINI CAROUSEL ── */
+    .mini-projects-carousel { padding: 4rem 0; }
+
+    /* ── CONTATO ── */
+    .cta-card { padding: 4rem 1.5rem; border-radius: 2rem; }
+    .contact-item { font-size: 1rem; padding: 1rem 1.5rem; }
 }

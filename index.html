@@ -254,6 +254,7 @@
                         </div>
                         <div class="project-img-wrapper">
                             <img src="Performance_Comercial.png" alt="Dashboard Performance Comercial">
+                            <div class="project-img-badge">🔍 Ampliar</div>
                         </div>
                     </div>
 
@@ -300,6 +301,7 @@
                         </div>
                         <div class="project-img-wrapper">
                             <img src="Nps.png" alt="Dashboard NPS">
+                            <div class="project-img-badge">🔍 Ampliar</div>
                         </div>
                     </div>
 
@@ -346,6 +348,7 @@
                         </div>
                         <div class="project-img-wrapper">
                             <img src="Mapa.png" alt="Mapa de Vendas Regional">
+                            <div class="project-img-badge">🔍 Ampliar</div>
                         </div>
                     </div>
 
@@ -577,6 +580,12 @@
         </section>
     </main>
 
+    <!-- LIGHTBOX -->
+    <div class="lightbox-overlay" id="lightbox-overlay">
+        <button class="lightbox-close" id="lightbox-close" title="Fechar">✕</button>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
     <script>
         lucide.createIcons();
 
@@ -700,7 +709,31 @@
 
         window.addEventListener('scroll', updateTimelineProgress);
         window.addEventListener('resize', updateTimelineProgress);
-        updateTimelineProgress(); 
+        updateTimelineProgress();
+
+        // Lightbox para imagens dos dashboards
+        const lightboxOverlay = document.getElementById('lightbox-overlay');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxClose = document.getElementById('lightbox-close');
+
+        document.querySelectorAll('.project-img-wrapper').forEach(wrapper => {
+            wrapper.addEventListener('click', () => {
+                const img = wrapper.querySelector('img');
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt;
+                lightboxOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        function closeLightbox() {
+            lightboxOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightboxOverlay.addEventListener('click', (e) => { if (e.target === lightboxOverlay) closeLightbox(); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
     </script>
 </body>
 </html>
